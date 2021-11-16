@@ -8,21 +8,14 @@
 </head>
 <body>
     <header>
-        <h1><a href="/"/>Babin's Blogs</a></h1>
+        <h1><a href="/"/>Bob's Blogs</a></h1>
     </header>
+    {% for post in posts %}
     <article>
-        <time>published: 15.11.2021, 15:11</time>
-        <h2><a href="/">My first post</a></h2>
-        <p>
-            I love to live my life with all dignity, loving all and being loved and respected by all. That is all I want and I see nothing worng in wanting it to be so.
-        </p>
+        <h2><a href="/">{{post.title}}</a></h2>
+        <p>{{post.text | linebreaksbr }}</p>
+        <time>Published: {{post.published_date}}</time>
     </article> 
-    <article>
-        <time>published: 15.11.2021, 15:30</time>
-        <h2><a href="/">My second post</a></h2>
-        <p>
-            This is the world of competition so we need to sharpen our skill every day so that we be at the top to be able to survive this competion otherwise we will wean away and no one would even know.
-        </p>
-    </article> 
+    {% endfor %}
 </body>
 </html>
